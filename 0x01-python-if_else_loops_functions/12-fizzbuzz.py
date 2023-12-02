@@ -9,3 +9,6 @@ def fizzbuzz():
             print("Buzz", end=" ")
         else:
             print(i, end=" ")
+
+if __name__ == "__main__":
+    fizzbuzz()
