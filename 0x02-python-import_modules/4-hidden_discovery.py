@@ -2,4 +2,5 @@
 if __name__ == "__main__":
     import sys
     for content in dir(sys):
-        print (content)
+        if content[:2] != "__":
+            print(content)
