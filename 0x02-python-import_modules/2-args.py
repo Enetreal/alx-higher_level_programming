@@ -6,7 +6,7 @@ if __name__ == "__main__":
     print("{} argument{}{}".format(argc, 's' if argc != 1 else '', ':' if argc else '.'))
 
     for i, arg in enumerate(argv[1:], start=1):
-        print("{}: {}".format(i, arg))#!/usr/bin/python3
+        print("{}: {}".format(i, arg))
 
 if __name__ == "__main__":
     """Print the number of and list of arguments."""
