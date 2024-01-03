@@ -1,15 +1,2 @@
 #!/bin/bash
-
-# Check if the PYFILE environment variable is set
-if [ -z "$PYFILE" ]; then
-    echo "Error: PYFILE environment variable not set."
-    exit 1
-fi
-
-# Compile the Python script
-python -m py_compile "$PYFILE"
-
-# Output filename will be ${PYFILE}c
-compiled_filename="${PYFILE}c"
-
-echo "Compilation successful. Output filename: $compiled_filename"
+python3 -c "import py_compile; py_compile.compile('$PYFILE', '$PYFILE' + 'c')"
