@@ -58,4 +58,3 @@ class Rectangle:
     def __str__(self):
         """Presents a diagram of the rectangle defined for an object"""
         return '\n'.join(['#' * self._width for _ in range(self._height)])
-
