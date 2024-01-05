@@ -4,7 +4,6 @@ The N queens puzzle is the challenge
 of placing N non-attacking queens on an NxN chessboard.
 """
 
-
 from sys import argv
 
 if __name__ == "__main__":
