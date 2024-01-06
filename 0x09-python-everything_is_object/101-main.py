@@ -7,7 +7,6 @@ class LockedClass:
 # Usage
 lc = LockedClass()
 lc.first_name = "John"
-
 try:
     lc.last_name = "Snow"
 except AttributeError as e:
