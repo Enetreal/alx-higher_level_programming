@@ -1,10 +1,8 @@
-def read_file(filename=""):
-    try:
-        with open(filename, 'r', encoding='utf-8') as file:
-            content = file.read()
-            print(content)
-    except Exception as e:
-        print(f"Error: {e}")
+#!/usr/bin/python3
+"""This module defines a text file-reading function"""
 
-# Example usage:
-read_file("example.txt")
+
+def read_file(filename=""):
+    """Prints the contents of a UTF8 text file"""
+    with open(filename, encoding="utf-8") as f:
+        print(f.read(), end="")
