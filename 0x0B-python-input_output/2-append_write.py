@@ -7,7 +7,3 @@ def append_write(filename="", text=""):
     except Exception as e:
         return 0
 
-# Example usage:
-text_to_append = "This is additional content."
-characters_added = append_write("example.txt", text_to_append)
-print(f"Number of characters added: {characters_added}")

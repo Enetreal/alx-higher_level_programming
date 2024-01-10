@@ -19,4 +19,4 @@ def write_file(filename="", text=""):
             num_characters_written = file.write(text)
             return num_characters_written
     except Exception as e:
-        return 0
+        return f.write(text)
