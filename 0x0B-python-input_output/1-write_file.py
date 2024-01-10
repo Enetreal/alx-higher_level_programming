@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-"""Defines a file-writing function."""
-
+"""
+Defines a file-writing function.
+"""
 
 def write_file(filename="", text=""):
     """
@@ -18,5 +19,4 @@ def write_file(filename="", text=""):
             num_characters_written = file.write(text)
             return num_characters_written
     except Exception as e:
-        print(f"Error: {e}")
         return 0
