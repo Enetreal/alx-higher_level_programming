@@ -1,22 +1,17 @@
 #!/usr/bin/node
+
+const firstFile = process.argv[2];
+const secondFile = process.argv[3];
+const thirdFile = process.argv[4];
+
+// Import the file system module
 const fs = require('fs');
 
-const fileA = process.argv[2];
-const fileB = process.argv[3];
-const fileC = process.argv[4];
+// Read the content of the first/second source file
+const contentA = fs.readFileSync(firstFile, 'utf8');
+const contentB = fs.readFileSync(secondFile, 'utf8');
 
-if (
-  fs.existsSync(fileA) &&
-fs.statSync(fileA).isFile &&
-fs.existsSync(fileB) &&
-fs.statSync(fileB).isFile &&
-fileC !== undefined
-) {
-  const fileAContent = fs.readFileSync(fileA);
-  const fileBContent = fs.readFileSync(fileB);
-  const stream = fs.createWriteStream(fileC);
+// Concatenate the contents of both files
+const concatenatedText = contentA + contentB;
 
-  stream.write(fileAContent);
-  stream.write(fileBContent);
-  stream.end();
-}
+fs.writeFileSync(thirdFile, concatenatedText);
