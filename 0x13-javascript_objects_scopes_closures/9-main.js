@@ -1,6 +1,10 @@
 #!/usr/bin/node
-const logMe = require('./9-logme').logMe;
 
-logMe("Hello");
-logMe("Best");
-logMe("School");
+let numarg = 0;
+
+exports.logMe = function (item) {
+  // Print the number of arguments/new argument value
+  console.log(numarg + ': ' + item);
+
+  numarg++;
+};
