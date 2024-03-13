@@ -1,8 +1,10 @@
 #!/usr/bin/node
 
-let counter = 0;
+let numarg = 0;
 
-exports.logMe = function count (item) {
-  console.log(`${counter}: ${item}`);
-  counter += 1;
+exports.logMe = function (item) {
+  // Print the number of arguments/new argument value
+  console.log(numarg + ': ' + item);
+
+  numarg++;
 };
