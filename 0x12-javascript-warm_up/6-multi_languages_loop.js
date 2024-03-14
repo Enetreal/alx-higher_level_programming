@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
-// Array of strings to print
-const txt = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
+// Retrieve the first cmd line arg
+const ar = process.argv[2];
 
-// Loop through each element of the array and print it
-for (let u = 0; u < txt.length; u++) { console.log(txt[u]); }
+// Check if the argument is defined
+console.log(ar !== undefined ? ar : 'No argument');
