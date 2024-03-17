@@ -11,13 +11,14 @@ def list_all_cities(username, password, database):
     try:
         # Connect to the database
         db_connect = db.connect(host="localhost", port=3306,
-                                user=username, passwd=password, db=database)
+                user=username, passwd=password, db=database)
 
         with db_connect.cursor() as db_cursor:
             # Execute SQL query
-            db_cursor.execute("SELECT cities.id, cities.name, states.name \
-                                FROM cities JOIN states ON cities.state_id \
-                                = states.id ORDER BY cities.id ASC")
+            db_cursor.execute("SELECT cities.id, cities.name,
+            states.name \
+                    FROM cities JOIN states ON cities.state_id \
+                    = states.id ORDER BY cities.id ASC")
             rows_selected = db_cursor.fetchall()
 
         # Display the results
@@ -37,7 +38,8 @@ def list_all_cities(username, password, database):
 if __name__ == '__main__':
     # Check if correct number of arguments is provided
     if len(argv) != 4:
-        print("Usage: ./list_cities.py <username> <password> <database>")
+        print("Usage: ./list_cities.py <username> <password>
+                <database>")
         exit(1)
 
     list_all_cities(argv[1], argv[2], argv[3])
