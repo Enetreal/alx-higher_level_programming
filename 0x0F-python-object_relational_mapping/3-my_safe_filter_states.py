@@ -9,10 +9,10 @@ import sys
 
 if __name__ == "__main__":
     conn = MySQLdb.connect(host="localhost",
-            port=3306,
-            user=sys.argv[1],
-            passwd=sys.argv[2],
-            db=sys.argv[3])
+                           port=3306,
+                           user=sys.argv[1],
+                           passwd=sys.argv[2],
+                           db=sys.argv[3])
 
     cur = conn.cursor()
     state_name = sys.argv[4]
@@ -20,7 +20,7 @@ if __name__ == "__main__":
             'SELECT * FROM states WHERE CAST(name AS BINARY) ' +
             'LIKE %s ORDER BY id ASC;',
             [state_name]
-            )
+    )
     rows = cur.fetchall()
 
     for res in rows:
