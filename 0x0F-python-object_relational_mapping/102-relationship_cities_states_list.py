@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Prints the State object with the name passed as an argument from the database"""
+"""Prints the State object with the name
+passed as an argument from the database"""
 
 import sys
 from relationship_state import Base, State
@@ -15,7 +16,8 @@ if __name__ == "__main__":
 
     try:
         # Establish connection to the database
-        engine = create_engine(f'mysql+mysqldb://{sys.argv[1]}:{sys.argv[2]}@localhost:3306/{sys.argv[3]}')
+        engine = create_engine(f'mysql+mysqldb://{sys.argv[1]}:
+                {sys.argv[2]}@localhost:3306/{sys.argv[3]}')
         Base.metadata.create_all(engine)
         Session = sessionmaker(bind=engine)
         session = Session()
