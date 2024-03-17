@@ -15,7 +15,7 @@ if __name__ == "__main__":
 
     cur = conn.cursor()
     cur.execute("""SELECT * FROM states WHERE name
-                LIKE BINARY 'N%' ORDER BY states.id""")
+                   LIKE BINARY 'N%' ORDER BY states.id""")
     rows = cur.fetchall()
 
     for res in rows:
