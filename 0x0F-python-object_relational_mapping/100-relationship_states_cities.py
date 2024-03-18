@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Creates the State 'California' with the City San 'Francisco'"""
+"""Creates the State 'California' with the City 'San Francisco'"""
 
 
 import sys
@@ -15,21 +15,28 @@ if __name__ == '__main__':
         passW = sys.argv[2]
         dataB = sys.argv[3]
 
-        DATABASE_URL = "mysql://{}:{}@localhost:3306/{}".format(
-                user, passW, dataB
-                )
+        DATABASE_URL = f"mysql://{user}:{passW}@localhost:3306/{dataB}"
 
-        engine = create_engine(DATABASE_URL)
+        try:
+            engine = create_engine(DATABASE_URL)
 
-        Base.metadata.create_all(engine)
-        Session = sessionmaker(bind=engine)
-        session = Session()
+            Base.metadata.create_all(engine)
+            Session = sessionmaker(bind=engine)
+            session = Session()
 
-        """State 'California' and City 'San Francisco'"""
-        california = State(name="California")
-        san_francisco = City(name="San Francisco", state=california)
+            # Create State 'California' and City 'San Francisco'
+            california = State(name="California")
+            san_francisco = City(name="San Francisco", state=california)
 
-        """Add and commit changes"""
-        session.add(california, san_francisco)
-        session.commit()
-        session.close()
+            # Add and commit changes
+            session.add_all([california, san_francisco])
+            session.commit()
+            session.close()
+
+        except Exception as e:
+            print(f"Error: {e}")
+            sys.exit(1)
+
+    else:
+        print("Usage: {} <username> <password> <database>".format(sys.argv[0]))
+        sys.exit(1)
