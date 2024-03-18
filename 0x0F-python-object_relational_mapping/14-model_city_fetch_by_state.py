@@ -16,8 +16,8 @@ if __name__ == '__main__':
         dataB = sys.argv[3]
 
         DATABASE_URL = "mysql://{}:{}@localhost:3306/{}".format(
-            user, passW, dataB
-        )
+                user, passW, dataB
+                )
 
         engine = create_engine(DATABASE_URL)
 
@@ -29,7 +29,7 @@ if __name__ == '__main__':
         cities = session.query(City).order_by(City.id).all()
         for city in cities:
             stateName = session.query(State).filter_by(
-                id=city.state_id).first().name
+                    id=city.state_id).first().name
             print("{}: ({}) {}".format(stateName, city.id, city.name))
 
         session.close()
