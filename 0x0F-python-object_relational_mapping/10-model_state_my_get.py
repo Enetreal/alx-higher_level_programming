@@ -6,6 +6,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 
+
 def main():
     """
     Main function to query the database for the State object
@@ -35,8 +36,10 @@ def main():
         else:
             print("Not found")
     else:
-        print("Usage: ./script.py <username> <password> <database> <state_name>")
+        print("Usage: ./script.py <username> <password> <database>
+                <state_name>")
         sys.exit(1)
+
 
 if __name__ == '__main__':
     main()
